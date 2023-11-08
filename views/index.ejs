@@ -1,13 +1,27 @@
-<%- include("partials/header.ejs") %>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Blog - Home</title>
+  <link rel="stylesheet" href="/public/styles/main.css">
+</head>
 
 <body>
-  <main>
-    <form action="/submit" method="POST">
-      <input type="text" name="post" placeholder="Write your post...">
-     
-      <input type="submit" value="OK">
-    </form>
-  </main>
-</body>
+  <% include partials/header.ejs %>
 
-<%- include("partials/footer.ejs") %>
+  <h2>Recent Posts</h2>
+  <ul>
+    <% posts.forEach(post => { %>
+      <li>
+        <h3><%= post.title %></h3>
+        <p><%= post.content %></p>
+        <a href="/edit/<%= post.id %>">Edit</a>
+        <form method="POST" action="/delete/<%= post.id %>">
+          <button type="submit">Delete</button>
+        </form>
+      </li>
+    <% }); %>
+  </ul>
+
+  <% include partials/footer.ejs %>
+</body>
+</html>
