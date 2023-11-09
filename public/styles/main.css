@@ -1,39 +1,115 @@
 body {
-  background: rgb(42, 127, 196);
-  font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui,
-    helvetica neue, helvetica, Ubuntu, roboto, noto, arial, sans-serif;
-  color: rgb(235, 173, 41);
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  background-color: #016A70;
 }
 
-main {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+/* Style for the header */
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 1rem;
   text-align: center;
 }
 
-h1 {
-  font-size: 3.5rem;
-}
-
-input {
-  appearance: none;
-  -webkit-appearance: none;
-  border: 0;
-  font-size: 0.9rem;
-  background: #b6b1b1;
-  padding: 1rem;
-  color: white;
-  cursor: pointer;
-}
-
+/* Style for the footer */
 footer {
-  position: absolute;
+  background-color: #333;
+  color: #fff;
+  padding: 1rem;
+  position: fixed;
   bottom: 0;
+  width: 100%;
+}
+
+/* Style for the main content area */
+main {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+h2{
+  color: #D2DE32;
+  text-align: center;
+}
+/* Style for the recent posts section */
+.recent-posts {
+  width: 60%;
+}
+
+/* Style for the create post section */
+.create-post {
+  width: 40%;
+  background-color: #f9f9f9;
+  padding: 20px;
+}
+
+/* Style for the form */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Style for the input fields */
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+/* Style for the delete button */
+.delete, .edit-button {
+  display: inline-block;
+  width: 150px;
+  margin-bottom: 5px;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  align-items: center;
+  padding: 10px 20px;
+  box-sizing: border-box; /* Include padding and border in the total width and height */
+
+}
+
+.delete {
+  background-color: rgb(146, 19, 19);
+}
+
+.edit-button {
+  background-color: #A2C579;
+  height: 35px;
+}
+
+
+
+ul{
+  padding: 20px;
+  padding-top: 0;
+}
+/* Style for the list items */
+li {
+  list-style: none;
+  background-color: #FFFFDD;
+  margin: 10px 0;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for the list item headings */
+li h3 {
+  color: #333;
+}
+
+/* Style for the list item content */
+li p {
+  color: #666;
 }

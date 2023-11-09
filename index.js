@@ -4,38 +4,52 @@ import bodyParser from "body-parser";
 const app = express();
 const port = 3000;
 
-//Middleware
-app.use(express.static("public"));
-app.use(bodyParser.urlencoded({ extended: true }));
+let posts = [];
 
+//Middleware
+app.use(express.static('public'));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.set('view engine', 'ejs'); // Set the view engine to EJS
 
-// app.get('/', (req, res) => {
-//   // Logic to fetch all posts
-//   res.render('index.ejs', { posts: [] }); // Pass fetched posts as an array
-// });
+app.get('/', (req, res) => {
+  // Logic to fetch all posts
+  res.render('index.ejs', { posts: posts }); // Pass fetched posts as an array
+});
 
-// app.get('/create', (req, res) => {
-//   res.render('createPost.ejs');
-// });
+app.get('/create', (req, res) => {
+  res.render('createPost.ejs');
+});
 
 app.post('/create', (req, res) => {
-  // Logic to create a new post
+  const newPost = {
+    id: posts.length + 1,
+    title: req.body.title,
+    content: req.body.content
+  };
+  posts.push(newPost);
   res.redirect('/');
 });
 
-// app.get('/edit/:id', (req, res) => {
-//   // Logic to find a post by id and render the edit page
-//   res.render('editPost.ejs', { post: {} }); // Pass the found post
-// });
+app.get('/edit/:id', (req, res) => {
+  const postId = req.params.id;
+  const post = posts.find(post => post.id == postId);
+  res.render('editPost', { post: post });
+});
 
 app.post('/edit/:id', (req, res) => {
-  // Logic to update the post by id
+  const postId = req.params.id;
+  const updatedPost = {
+    id: postId,
+    title: req.body.title,
+    content: req.body.content
+  };
+  posts = posts.map(post => (post.id == postId ? updatedPost : post));
   res.redirect('/');
 });
 
 app.post('/delete/:id', (req, res) => {
-  // Logic to delete the post by id
+  const postId = req.params.id;
+  posts = posts.filter(post => post.id != postId);
   res.redirect('/');
 });
 
