@@ -2,7 +2,7 @@ body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
   margin: 0;
-  background-color: #016A70;
+  background-color:#A2C579;
 }
 
 /* Style for the header */
@@ -35,34 +35,42 @@ h2{
   text-align: center;
 }
 /* Style for the recent posts section */
-.recent-posts {
-  width: 60%;
+#posts {
+  width: 100%;
+  background-color: #016A70;
 }
 
 /* Style for the create post section */
-.create-post {
-  width: 40%;
+#create-post {
+  width: 95%;
+  margin: 0 auto;
   background-color: #f9f9f9;
-  padding: 20px;
+  padding: 20px 10px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+ 
 }
 
 /* Style for the form */
 form {
   display: flex;
   flex-direction: column;
+  
 }
 
 /* Style for the input fields */
 input[type="text"],
 textarea {
-  width: 100%;
+  width: 90%;
   padding: 12px;
   border: 1px solid #ccc;
   border-radius: 4px;
   margin-bottom: 20px;
 }
 
-/* Style for the delete button */
+/* Style for the delete and edit buttons */
 .delete, .edit-button {
   display: inline-block;
   width: 150px;
@@ -75,7 +83,8 @@ textarea {
   text-align: center;
   align-items: center;
   padding: 10px 20px;
-  box-sizing: border-box; /* Include padding and border in the total width and height */
+  box-sizing: border-box;
+  font-size: 15px;
 
 }
 
@@ -85,15 +94,36 @@ textarea {
 
 .edit-button {
   background-color: #A2C579;
-  height: 35px;
+  height: 37px;
 }
 
+#create-post-btn{
+  background-color: rgb(105, 165, 255);
+  width: 50%;
+  height: 37px;
+  margin: 0 auto;
+}
 
+.flex-container {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+}
+
+#create-post > form {
+  width: 90%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  margin-left: 5px;
+}
 
 ul{
   padding: 20px;
   padding-top: 0;
 }
+
 /* Style for the list items */
 li {
   list-style: none;

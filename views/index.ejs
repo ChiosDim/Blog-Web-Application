@@ -8,26 +8,35 @@
 <body>
   <% include("partials/header.ejs") %>
 
+  <div id="posts">
   <h2>Recent Posts</h2>
   <ul>
     <% posts.forEach(post => { %>
       <li>
         <h3><%= post.title %></h3>
         <p><%= post.content %></p>
-        <a href="/edit/<%= post.id %>" class="edit-button" >Edit</a>
-        <form method="POST" action="/delete/<%= post.id %>">
-          <button class="delete" type="submit">Delete</button>
-        </form>
+        <div class="flex-container">
+          <form method="POST" action="/edit/<%= post.id %>">
+            <a href="/edit/<%= post.id %>" class="edit-button">Edit</a>
+          </form>
+        
+          <form method="POST" action="/delete/<%= post.id %>">
+            <button class="delete" type="submit">Delete</button>
+          </form>
+      </div>
       </li>
     <% }); %>
   </ul>
+</div>
 
+<div id="create-post">
   <h2>Create a New Post</h2>
   <form method="POST" action="/create">
     <input type="text" name="title" placeholder="Title" required><br>
     <textarea name="content" placeholder="Content" required></textarea><br>
-    <button type="submit">Create Post</button>
+    <button id="create-post-btn" type="submit">Create Post</button>
   </form>
+</div>
 
   <% include("partials/footer.ejs") %>
 </body>
