@@ -1,4 +1,7 @@
 body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   font-family: Arial, sans-serif;
   line-height: 1.6;
   margin: 0;
@@ -7,25 +10,25 @@ body {
 
 /* Style for the header */
 header {
-  background-color: #333;
-  color: #fff;
+  background-color: #A2C579;
+  color: #016A70;
   padding: 1rem;
   text-align: center;
 }
 
 /* Style for the footer */
 footer {
-  background-color: #333;
-  color: #fff;
+  background-color: #A2C579;
+  color: rgba(70, 22, 22, 0.795);
   padding: 1rem;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
+  position: relative;
+  margin-top: auto;
 }
 
 /* Style for the main content area */
 main {
   display: flex;
+  flex: 1;
   justify-content: center;
   padding: 20px;
 }
@@ -33,6 +36,14 @@ main {
 h2{
   color: #D2DE32;
   text-align: center;
+}
+
+h3{
+  text-align: center;
+}
+
+#create-post > h2{
+  margin-top: 15px;
 }
 /* Style for the recent posts section */
 #posts {
@@ -42,7 +53,7 @@ h2{
 
 /* Style for the create post section */
 #create-post {
-  width: 95%;
+  width: 80%;
   margin: 0 auto;
   background-color: #f9f9f9;
   padding: 20px 10px;
@@ -50,14 +61,30 @@ h2{
   margin-bottom: 30px;
   display: flex;
   flex-direction: column;
- 
+  border-radius: 4px;
+}
+
+#create-post > form {
+  width: 90%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin: 0 auto;
+}
+
+#create-post-btn{
+  background-color: rgb(105, 165, 255);
+  width: 50%;
+  height: 37px;
+  margin: 0 auto;
+  color: white;
+  border: none;
 }
 
 /* Style for the form */
 form {
   display: flex;
   flex-direction: column;
-  
 }
 
 /* Style for the input fields */
@@ -85,7 +112,6 @@ textarea {
   padding: 10px 20px;
   box-sizing: border-box;
   font-size: 15px;
-
 }
 
 .delete {
@@ -97,26 +123,36 @@ textarea {
   height: 37px;
 }
 
-#create-post-btn{
-  background-color: rgb(105, 165, 255);
-  width: 50%;
-  height: 37px;
-  margin: 0 auto;
-}
-
 .flex-container {
   display: flex;
   align-items: flex-end;
   flex-direction: column;
 }
 
-#create-post > form {
-  width: 90%;
-  padding: 12px;
-  border: 1px solid #ccc;
+#edit-container{
+  background-color: #f9f9f9;
+  padding: 20px 10px;
+  margin: 0 auto;
+  height: 50vh;
+  width: 80%;
   border-radius: 4px;
-  margin-bottom: 20px;
-  margin-left: 5px;
+}
+
+#edit-container input{
+  justify-content: center;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+#edit-container textarea{
+  height: 10vh;
+  margin: 0 auto;
+  margin-top: 10px;
+  padding: 10px;
+}
+
+#edit-container #create-post-btn{
+  margin-top: 50px;
 }
 
 ul{

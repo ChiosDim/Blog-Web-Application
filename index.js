@@ -9,7 +9,7 @@ let posts = [];
 //Middleware
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
-app.set('view engine', 'ejs'); // Set the view engine to EJS
+app.set('view engine', 'ejs');
 
 app.get('/', (req, res) => {
   // Logic to fetch all posts
